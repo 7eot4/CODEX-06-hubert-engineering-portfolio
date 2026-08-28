@@ -2,8 +2,24 @@
 
 import { useEffect, useState } from 'react';
 import { profile } from '../data/profile';
+import { localeOptions, type Locale } from '../data/translations';
 
-export function SystemChrome() {
+type SystemChromeProps = {
+  locale: Locale;
+  onLocaleChange: (locale: Locale) => void;
+  labels: {
+    skip: string;
+    home: string;
+    navLabel: string;
+    status: string;
+    index: string;
+    close: string;
+    mobileIndex: string;
+  };
+  navigation: string[];
+};
+
+export function SystemChrome({ locale, onLocaleChange, labels, navigation }: SystemChromeProps) {
   const [active, setActive] = useState('profile');
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,7 +43,8 @@ export function SystemChrome() {
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
     return () => {
-      sectionObserver.disconnect(); revealObserver.disconnect();
+      sectionObserver.disconnect();
+      revealObserver.disconnect();
       window.removeEventListener('scroll', updateProgress);
     };
   }, []);
@@ -39,23 +56,29 @@ export function SystemChrome() {
 
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <a className="skip-link" href="#main-content">{labels.skip}</a>
       <div className="scroll-progress" aria-hidden="true"><span /></div>
       <header className="site-header">
-        <a className="brand-mark" href="#top" aria-label="Hubert — home" onClick={() => setMenuOpen(false)}>
+        <a className="brand-mark" href="#top" aria-label={labels.home} onClick={() => setMenuOpen(false)}>
           <span>H</span><span className="brand-copy">HUBERT / ENGINEERING PROFILE</span>
         </a>
-        <nav className="primary-nav" aria-label="Primary navigation">
-          {profile.navigation.map((item) => <a key={item.href} href={item.href} aria-current={active === item.href.slice(1) ? 'location' : undefined}>{item.label}</a>)}
+        <nav className="primary-nav" aria-label={labels.navLabel}>
+          {profile.navigation.map((item, index) => <a key={item.href} href={item.href} aria-current={active === item.href.slice(1) ? 'location' : undefined}>{navigation[index]}</a>)}
         </nav>
         <div className="header-end">
-          <div className="system-status" aria-label="System online"><span className="status-dot" /> SYSTEM ONLINE</div>
-          <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((value) => !value)}>{menuOpen ? 'CLOSE' : 'INDEX'}</button>
+          <div className="system-status" aria-label={labels.status}><span className="status-dot" /> {labels.status}</div>
+          <label className="language-control">
+            <span className="sr-only">Language</span>
+            <select value={locale} onChange={(event) => onLocaleChange(event.target.value as Locale)} aria-label="Language">
+              {localeOptions.map((option) => <option value={option.code} key={option.code}>{option.short} — {option.name}</option>)}
+            </select>
+          </label>
+          <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((value) => !value)}>{menuOpen ? labels.close : labels.index}</button>
         </div>
       </header>
-      <nav className={`mobile-navigation ${menuOpen ? 'is-open' : ''}`} id="mobile-navigation" aria-label="Mobile navigation">
-        <span className="mobile-nav-label">SYSTEM INDEX / 01—06</span>
-        {profile.navigation.map((item, index) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}><b>{String(index + 1).padStart(2, '0')}</b>{item.label}</a>)}
+      <nav className={`mobile-navigation ${menuOpen ? 'is-open' : ''}`} id="mobile-navigation" aria-label={labels.navLabel}>
+        <span className="mobile-nav-label">{labels.mobileIndex}</span>
+        {profile.navigation.map((item, index) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}><b>{String(index + 1).padStart(2, '0')}</b>{navigation[index]}</a>)}
       </nav>
     </>
   );

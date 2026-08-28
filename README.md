@@ -6,7 +6,11 @@ The central narrative is:
 
 `ELECTRICAL → INDUSTRIAL SYSTEMS → AUTOMATION → SOFTWARE → AI → INTELLIGENT SYSTEMS`
 
-Live site: [hubert-portfolio.rocky-hake-4435.chatgpt.site](https://hubert-portfolio.rocky-hake-4435.chatgpt.site)
+Public site: [7eot4.github.io/CODEX-06-hubert-engineering-portfolio](https://7eot4.github.io/CODEX-06-hubert-engineering-portfolio/)
+
+Sites preview: [hubert-portfolio.rocky-hake-4435.chatgpt.site](https://hubert-portfolio.rocky-hake-4435.chatgpt.site)
+
+Source repository: [7eot4/CODEX-06-hubert-engineering-portfolio](https://github.com/7eot4/CODEX-06-hubert-engineering-portfolio)
 
 ## Stack
 
@@ -15,6 +19,9 @@ Live site: [hubert-portfolio.rocky-hake-4435.chatgpt.site](https://hubert-portfo
 - Tailwind CSS 4 with a project-specific CSS design system
 - CSS 3D transforms for the anomalous cube
 - Cloudflare-compatible build through OpenAI Sites
+- Static export and automated deployment through GitHub Pages
+
+The interface supports English, Polish, German, Norwegian Bokmål, Spanish, Italian and French. The selected language is retained in the browser.
 
 The cube intentionally avoids Three.js and WebGL. It uses lightweight CSS 3D transforms, pointer interaction and a reduced-motion fallback.
 
@@ -35,6 +42,7 @@ Open `http://localhost:3000`.
 npm run lint
 npm run typecheck
 npm run build
+npm run build:pages
 ```
 
 To run the built version locally:
@@ -61,6 +69,8 @@ It contains:
 - contact details and links.
 
 Unknown or unverified details are intentionally left empty or marked for verification. Do not publish a certification as confirmed until its scope and validity have been checked.
+
+Interface translations are stored in `app/data/translations.ts`. Every locale uses the same technical data, preventing experience, certificates and project facts from drifting between language versions.
 
 ## Where to edit the interface
 
@@ -89,6 +99,6 @@ This value is used by Open Graph metadata, `robots.txt` and `sitemap.xml`.
 
 ## Deployment
 
-The project includes `.openai/hosting.json` and is ready for OpenAI Sites hosting. It can also be deployed through a compatible Cloudflare/Vinext environment after setting `NEXT_PUBLIC_SITE_URL` to the final domain.
+The project includes `.openai/hosting.json` for OpenAI Sites. GitHub Pages is deployed automatically from `main` by `.github/workflows/deploy-pages.yml`; the workflow creates a static Next.js export with the repository base path and publishes the `out` directory.
 
 Before every public release, run the three quality checks above and verify the page at desktop, tablet and phone widths.
