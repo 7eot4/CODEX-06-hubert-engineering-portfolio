@@ -23,7 +23,7 @@ Source repository: [7eot4/CODEX-06-hubert-engineering-portfolio](https://github.
 
 The interface supports English, Polish, German, Norwegian Bokmål, Spanish, Italian and French. The selected language is retained in the browser.
 
-The cube intentionally avoids Three.js and WebGL. It uses lightweight CSS 3D transforms, pointer interaction and a reduced-motion fallback.
+The visual direction is an engineering editorial system: warm technical paper, graphite, cobalt and a restrained signal-orange accent. The cube intentionally avoids Three.js and WebGL. It uses lightweight CSS 3D transforms, pointer interaction and a reduced-motion fallback.
 
 ## Local development
 
@@ -102,3 +102,7 @@ This value is used by Open Graph metadata, `robots.txt` and `sitemap.xml`.
 The project includes `.openai/hosting.json` for OpenAI Sites. GitHub Pages is deployed automatically from `main` by `.github/workflows/deploy-pages.yml`; the workflow creates a static Next.js export with the repository base path and publishes the `out` directory.
 
 Before every public release, run the three quality checks above and verify the page at desktop, tablet and phone widths.
+
+## Redesign backup
+
+The previous dark purple version is preserved in Git as `backup/pre-redesign-2026-08-28` and has been pushed to GitHub. It can be restored without depending on local uncommitted files.
