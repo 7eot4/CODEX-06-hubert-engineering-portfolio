@@ -30,6 +30,8 @@ export function AnomalousCube() {
       <div className="cube-aura" />
       <div className="orbit orbit-one" />
       <div className="orbit orbit-two" />
+      <div className="orbit-node orbit-node-one" />
+      <div className="orbit-node orbit-node-two" />
       <div className="cube-float">
         <div className="cube-assembly" ref={cubeRef}>
           {faces.map((face, index) => (
@@ -40,6 +42,7 @@ export function AnomalousCube() {
             </div>
           ))}
           <div className="cube-core" />
+          <div className="cube-scan-plane" />
         </div>
       </div>
       <span className="particle particle-one" />

@@ -39,6 +39,8 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" id="top" aria-labelledby="hero-heading">
           <div className="hero-grid" aria-hidden="true" />
+          <div className="hero-scan" aria-hidden="true" />
+          <div className="signal-traces" aria-hidden="true"><span /><span /><span /></div>
           <div className="hero-coordinates hero-coordinates-left" aria-hidden="true">SYS.01<br />51.1079° N<br />17.0385° E</div>
           <div className="hero-coordinates hero-coordinates-right" aria-hidden="true">PHYSICAL / DIGITAL<br />SIGNAL ACTIVE<br />REV. 001</div>
           <div className="cube-field"><AnomalousCube /></div>

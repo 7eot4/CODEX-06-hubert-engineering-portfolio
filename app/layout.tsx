@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Hubert — From Electrical Systems to Intelligent Systems',
     description: 'Engineering across electrical infrastructure, industry, automation, software and AI.',
     siteName: 'Hubert / Engineering Profile',
-    images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: 'Hubert — Engineering Systems' }],
+    images: [{ url: `${siteUrl}/og.png`, width: 1731, height: 909, alt: 'Hubert — From Electrical Systems to Intelligent Systems' }],
   },
   twitter: {
     card: 'summary_large_image',

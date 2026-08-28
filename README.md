@@ -23,7 +23,7 @@ Source repository: [7eot4/CODEX-06-hubert-engineering-portfolio](https://github.
 
 The interface supports English, Polish, German, Norwegian Bokmål, Spanish, Italian and French. The selected language is retained in the browser.
 
-The visual direction is an engineering editorial system: warm technical paper, graphite, cobalt and a restrained signal-orange accent. The cube intentionally avoids Three.js and WebGL. It uses lightweight CSS 3D transforms, pointer interaction and a reduced-motion fallback.
+The visual direction is a dark premium engineering interface with restrained purple energy and emerald system signals. The cube intentionally avoids Three.js and WebGL. It uses lightweight CSS 3D transforms, pointer interaction, signal-flow effects and a reduced-motion fallback.
 
 ## Local development
 
@@ -103,6 +103,9 @@ The project includes `.openai/hosting.json` for OpenAI Sites. GitHub Pages is de
 
 Before every public release, run the three quality checks above and verify the page at desktop, tablet and phone widths.
 
-## Redesign backup
+## Visual backups
 
-The previous dark purple version is preserved in Git as `backup/pre-redesign-2026-08-28` and has been pushed to GitHub. It can be restored without depending on local uncommitted files.
+- `backup/pre-redesign-2026-08-28` — original dark version before the first redesign.
+- `backup/editorial-redesign-2026-08-28` — light engineering-editorial experiment.
+
+Both restore points are available on GitHub and do not depend on local uncommitted files.

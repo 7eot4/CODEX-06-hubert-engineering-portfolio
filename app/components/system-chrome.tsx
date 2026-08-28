@@ -58,6 +58,9 @@ export function SystemChrome({ locale, onLocaleChange, labels, navigation }: Sys
     <>
       <a className="skip-link" href="#main-content">{labels.skip}</a>
       <div className="scroll-progress" aria-hidden="true"><span /></div>
+      <div className="system-telemetry" aria-hidden="true">
+        <span>CH.07</span><i /><span>LINK / STABLE</span><span>DATA FLOW</span>
+      </div>
       <header className="site-header">
         <a className="brand-mark" href="#top" aria-label={labels.home} onClick={() => setMenuOpen(false)}>
           <span>H</span><span className="brand-copy">HUBERT / ENGINEERING PROFILE</span>
