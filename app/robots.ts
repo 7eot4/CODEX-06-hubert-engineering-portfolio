@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const origin = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+  const origin =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    'https://hubert-portfolio.rocky-hake-4435.chatgpt.site';
   return {
     rules: { userAgent: '*', allow: '/' },
     sitemap: `${origin}/sitemap.xml`,

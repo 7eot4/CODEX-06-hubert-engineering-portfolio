@@ -6,6 +6,8 @@ The central narrative is:
 
 `ELECTRICAL → INDUSTRIAL SYSTEMS → AUTOMATION → SOFTWARE → AI → INTELLIGENT SYSTEMS`
 
+Live site: [hubert-portfolio.rocky-hake-4435.chatgpt.site](https://hubert-portfolio.rocky-hake-4435.chatgpt.site)
+
 ## Stack
 
 - Next.js App Router-compatible architecture powered by Vinext
@@ -80,7 +82,7 @@ The animation respects `prefers-reduced-motion` and should remain lightweight. R
 Copy `.env.example` to `.env.local` and set the final public origin:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-domain.example
+NEXT_PUBLIC_SITE_URL=https://hubert-portfolio.rocky-hake-4435.chatgpt.site
 ```
 
 This value is used by Open Graph metadata, `robots.txt` and `sitemap.xml`.
